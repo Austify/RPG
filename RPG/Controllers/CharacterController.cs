@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using RPG.DTOs.Character;
+using RPG.DTOs.CharacterDto;
 using RPG.Models;
 using RPG.Services.CharacterService;
 
@@ -46,5 +46,17 @@ namespace RPG.Controllers
             return Ok(_characterService.AddCharacter(newCharacter));
         }
 
+        [HttpPut]
+        public async Task<IActionResult> Update(UpdatedCharacterDto updateCharacter)
+        {
+            ServiceResponse<GetCharacterDto> serviceResponse = await _characterService.UpdateCharacter(updateCharacter);
+
+            if(serviceResponse.Data == null)
+            {
+                return NotFound(serviceResponse);
+            }
+
+            return Ok(serviceResponse);
+        }
     }
 }
