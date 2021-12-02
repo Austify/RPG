@@ -39,7 +39,7 @@ namespace RPG.Controllers
             return Ok(_characterService.GetCharacterById(id)); 
         }
 
-        [HttpPost]
+        [HttpPost("addcharacter")]
         public IActionResult AddCharacter(AddCharacterDto newCharacter)
         {
             
