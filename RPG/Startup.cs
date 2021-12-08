@@ -31,6 +31,7 @@ namespace RPG
             services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
             services.AddAutoMapper(typeof(Startup));
+            services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<ICharacterService, CharacterService>();
         }
 

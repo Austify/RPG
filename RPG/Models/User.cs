@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace RPG.Models
 {
     public class User
@@ -11,6 +13,7 @@ namespace RPG.Models
 
         public byte[] PasswordSalt { get; set; }
 
+        public List<Character> Characters { get; set; }
 
     }
 }

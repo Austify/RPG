@@ -13,6 +13,7 @@
     <Folder Include="DTOs\CharacterDto\" />
     <Folder Include="DTOs\Profiles\" />
     <Folder Include="Data\" />
+    <Folder Include="DTOs\UserDto\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
